@@ -2,6 +2,7 @@
   <div>
     <el-container>
       <el-header style="text-align: left; font-size: 18px">
+                  <img class="logo" src="static/logo.png">
         <div class="header-left">
           <el-menu
           :default-active="activeIndex"
@@ -39,18 +40,23 @@
 
 </script>
 <style>
-
+  .logo {
+    position: absolute;
+    z-index: 99;
+    width: 60px;
+    height: 60px;
+    padding-left: 60px
+  }
   .el-menu-item {
     width: 90px;
     text-align: center
   }
   .el-header {
     background-color: #545c64;
-    line-height: 60px;
   }
   .header-left {
     float: left;
-    padding-left: 20px
+    padding-left: 140px
   }
 
 </style>

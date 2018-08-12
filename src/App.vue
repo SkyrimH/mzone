@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <main-header></main-header>
     <router-view/>
     <!-- <div>
       <el-button @click="startHacking">Start</el-button>
@@ -8,8 +9,12 @@
 </template>
 
 <script>
+import mainHeader from '@/common/header'
 export default {
   name: 'App',
+  components: {
+            mainHeader
+        },
   methods: {
     startHacking () {
       this.$notify({
