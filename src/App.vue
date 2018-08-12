@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <router-view/>
-    <div>
+    <!-- <div>
       <el-button @click="startHacking">Start</el-button>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -30,6 +30,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>

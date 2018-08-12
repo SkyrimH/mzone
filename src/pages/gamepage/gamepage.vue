@@ -1,14 +1,14 @@
 <template>
     <div>
         <main-header></main-header>
-        homePage111
+        gamePage
     </div>
 </template>
 
 <script>
     import mainHeader from '@/components/header'
     export default {
-        name: 'homePage',
+        name: 'gamePage',
         components: {
             mainHeader
         }
