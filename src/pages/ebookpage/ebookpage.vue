@@ -2,45 +2,68 @@
     <div>
         <el-row :gutter="10">
             <el-col :xs="{span: 22, offset: 1}" :sm="{span: 18, offset: 3}" :md="{span: 14, offset: 5}" :lg="{span: 12, offset: 6}">
-                <el-tabs v-model="activeName" @tab-click="handleClick">
-                    <el-tab-pane label="全部" name="first">
-                        <div class="container">
-                            <div class="book">
-                                <div class="book-plc">
-                                    <img class="book-img" src="static/ebook/jsgc/jsgc.jpg">
-                                </div>
-                                <div class="book-info">
-                                    <p class="book-title">JavaScript高级程序设计</p>
-                                    <p class="book-author">[美] 尼古拉斯·泽卡斯</p>
-                                    <el-rate v-model="value5" allow-half disabled text-color="#ff9900" score-template="{value}">
-                                    </el-rate>
-                                    <span class="douban">豆瓣 9.0 分</span>
-                                    <a href="static/ebook/jsgc/1.pdf">
-                                        <el-button class="down-btn" type="primary" plain>本地下载</el-button>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="book">
-                                <div class="book-plc">
-                                    <img class="book-img" src="static/ebook/wgjjx/1.jpg">
-                                </div>
-                                <div class="book-info">
-                                    <p class="book-title">经济学原理(第7版)——微观经济学分册</p>
-                                    <p class="book-author">曼昆 (N.Gregory Mankiw)</p>
-                                    <el-rate v-model="value5" allow-half disabled text-color="#ff9900" score-template="{value}">
-                                    </el-rate>
-                                    <span class="douban">豆瓣 9.6 分</span>
-                                    <a href="static/ebook/jsgc/1.pdf">
-                                        <el-button class="down-btn" type="primary" plain>本地下载</el-button>
-                                    </a>
+                <div class="container">
+                    <el-tabs v-model="activeName">
+                        <el-tab-pane label="全部" name="first">
+                            <div class="books-container">
+                                <div class="book" v-for="book in bookList" :key="book.id">
+                                    <div class="book-plc">
+                                        <img class="book-img" :src="book.plcurl">
+                                    </div>
+                                    <div class="book-info">
+                                        <p class="book-title">{{book.title}}</p>
+                                        <p class="book-author">{{book.author}}</p>
+                                        <el-rate v-model="book.rate" allow-half disabled text-color="#ff9900" score-template="{value}">
+                                        </el-rate>
+                                        <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
+                                        <a :href="book.downurl">
+                                            <el-button class="ebook-down-btn" type="primary" plain>本地下载</el-button>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </el-tab-pane>
-                    <el-tab-pane label="计算机类" name="second">配置管理</el-tab-pane>
-                    <el-tab-pane label="逻辑经济类" name="third">角色管理</el-tab-pane>
-                    <el-tab-pane label="定时任务补偿" name="fourth">定时任务补偿</el-tab-pane>
-                </el-tabs>
+                        </el-tab-pane>
+                        <el-tab-pane label="计算机类" name="second">
+                            <div class="books-container">
+                                <div class="book" v-for="book in bookList" :key="book.id" v-if="book.bookclass == 'cs'">
+                                    <div class="book-plc">
+                                        <img class="book-img" :src="book.plcurl">
+                                    </div>
+                                    <div class="book-info">
+                                        <p class="book-title">{{book.title}}</p>
+                                        <p class="book-author">{{book.author}}</p>
+                                        <el-rate v-model="book.rate" allow-half disabled text-color="#ff9900" score-template="{value}">
+                                        </el-rate>
+                                        <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
+                                        <a :href="book.downurl">
+                                            <el-button class="ebook-down-btn" type="primary" plain>本地下载</el-button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </el-tab-pane>
+                        <el-tab-pane label="社科类" name="third">
+                            <div class="books-container">
+                                <div class="book" v-for="book in bookList" :key="book.id" v-if="book.bookclass == 'ss'">
+                                    <div class="book-plc">
+                                        <img class="book-img" :src="book.plcurl">
+                                    </div>
+                                    <div class="book-info">
+                                        <p class="book-title">{{book.title}}</p>
+                                        <p class="book-author">{{book.author}}</p>
+                                        <el-rate v-model="book.rate" allow-half disabled text-color="#ff9900" score-template="{value}">
+                                        </el-rate>
+                                        <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
+                                        <a :href="book.downurl">
+                                            <el-button class="ebook-down-btn" type="primary" plain>本地下载</el-button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </el-tab-pane>
+                    </el-tabs>
+
+                </div>
 
             </el-col>
         </el-row>
@@ -48,20 +71,42 @@
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         name: "ebookPage",
         components: {},
         data() {
             return {
+                bookList: [],
                 value5: 4.8,
                 activeName: 'first'
             }
+        },
+        methods: {
+            getEbookInfo() {
+                axios.get('/api/ebook.json')
+                    .then(this.getEbookInfoSucc)
+            },
+            getEbookInfoSucc(res) {
+                console.log(res);
+                if (res.status == 200) {
+                    this.bookList = res.data
+                    console.log(this.bookList);
+                }
+            }
+        },
+        mounted() {
+            this.getEbookInfo()
         }
     };
 </script>
 
 <style scroped>
     .container {
+        margin-top: 30px
+    }
+
+    .books-container {
         text-align: center;
     }
 
@@ -104,13 +149,13 @@
         line-height: 1;
     }
 
-    .douban {
+    .ebook-douban {
         position: absolute;
         font-size: 14px;
         margin-left: 130px;
     }
 
-    .down-btn {
+    .ebook-down-btn {
         position: absolute;
         bottom: 10px;
     }
