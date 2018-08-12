@@ -1,0 +1,28 @@
+[{
+    "id": 1,
+    "bookclass": "cs",
+    "plcurl": "static/ebook/jsgc/jsgc.jpg",
+    "title": "JavaScript高级程序设计",
+    "author": "尼古拉斯·泽卡斯",
+    "rate": 4.7,
+    "dburl": "https://book.douban.com/subject/10546125/",
+    "downurl": "static/ebook/jsgc/1.pdf"
+}, {
+    "id": 2,
+    "bookclass": "ss",
+    "plcurl": "static/ebook/wgjjx/1.jpg",
+    "title": "经济学原理(第7版)——微观经济学分册",
+    "author": "曼昆 (N.Gregory Mankiw)",
+    "rate": 4.8,
+    "dburl": "https://book.douban.com/subject/26388289/",
+    "downurl": "#"
+}, {
+    "id": 3,
+    "bookclass": "ss",
+    "plcurl": "static/ebook/xfzxwx/1.jpg",
+    "title": "消费者行为学  第10版",
+    "author": "迈克尔·所罗门 (Michael R.Solom",
+    "rate": 4.2,
+    "dburl": "https://book.douban.com/subject/25850257/",
+    "downurl": "#"
+}]
