@@ -15,8 +15,10 @@
                                         <p class="book-author">{{book.author}}</p>
                                         <el-rate v-model="book.rate" allow-half disabled text-color="#ff9900" score-template="{value}">
                                         </el-rate>
-                                        <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
-                                        <a :href="book.downurl">
+                                        <a :href="book.dburl" target="_blank">
+                                            <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
+                                        </a>
+                                        <a :href="book.downurl" target="_blank">
                                             <el-button class="ebook-down-btn" type="primary" plain>本地下载</el-button>
                                         </a>
                                     </div>
@@ -34,8 +36,10 @@
                                         <p class="book-author">{{book.author}}</p>
                                         <el-rate v-model="book.rate" allow-half disabled text-color="#ff9900" score-template="{value}">
                                         </el-rate>
-                                        <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
-                                        <a :href="book.downurl">
+                                        <a :href="book.dburl" target="_blank">
+                                            <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
+                                        </a>                                        
+                                        <a :href="book.downurl" target="_blank">
                                             <el-button class="ebook-down-btn" type="primary" plain>本地下载</el-button>
                                         </a>
                                     </div>
@@ -53,8 +57,10 @@
                                         <p class="book-author">{{book.author}}</p>
                                         <el-rate v-model="book.rate" allow-half disabled text-color="#ff9900" score-template="{value}">
                                         </el-rate>
-                                        <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
-                                        <a :href="book.downurl">
+                                        <a :href="book.dburl" target="_blank">
+                                            <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
+                                        </a>
+                                        <a :href="book.downurl" target="_blank">
                                             <el-button class="ebook-down-btn" type="primary" plain>本地下载</el-button>
                                         </a>
                                     </div>
@@ -88,7 +94,6 @@
                     .then(this.getEbookInfoSucc)
             },
             getEbookInfoSucc(res) {
-                console.log(res);
                 if (res.status == 200) {
                     this.bookList = res.data
                     console.log(this.bookList);
