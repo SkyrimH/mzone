@@ -1,16 +1,14 @@
 <template>
     <div>
-        <main-header></main-header>
         homePage111
     </div>
 </template>
 
 <script>
-    import mainHeader from '@/components/header'
     export default {
         name: 'homePage',
         components: {
-            mainHeader
+        
         }
     }
 </script>
