@@ -22,7 +22,7 @@ export default new Router({
       component: videoPage
     },
     {
-      path: '/video/01',
+      path: '/video/:id',
       name: 'videoPlay',
       component: videoPlay
     },

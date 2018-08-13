@@ -8,7 +8,7 @@
         "actor": "郭涛 / 刘桦 / 连晋 / 黄渤 / 徐峥",
         "dbrate": 4.2,
         "dburl": "https://movie.douban.com/subject/1862151/",
-        "playurl": "/video/01",
+        "playurl": "static/video/fkdst/01.mp4",
         "downurl": "#"
     },
     {
@@ -20,7 +20,7 @@
         "actor": "刘德华 / 梁朝伟 / 黄秋生 / 曾志伟 / 郑秀文",
         "dbrate": 4.6,
         "dburl": "https://movie.douban.com/subject/1307914/",
-        "playurl": "/video/02",
+        "playurl": "static/video/wjd1/1.mp4",
         "downurl": "#"
     },
     {
@@ -32,7 +32,7 @@
         "actor": "陈冠希 / 余文乐 / 曾志伟 / 黄秋生 / 吴镇宇",
         "dbrate": 4.2,
         "dburl": "https://movie.douban.com/subject/1307106/",
-        "playurl": "/video/03",
+        "playurl": "static/video/wjd2/1.mp4",
         "downurl": "#"
     }
 ]
