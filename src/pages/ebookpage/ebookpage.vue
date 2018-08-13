@@ -54,7 +54,7 @@
             getEbookInfoSucc(res) {
                 if (res.status == 200) {
                     this.bookList = res.data
-                    console.log(this.bookList);
+                    // console.log(this.bookList);
                 }
             }
         },
