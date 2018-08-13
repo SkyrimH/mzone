@@ -4,8 +4,8 @@
             <el-col :xs="{span: 22, offset: 1}" :sm="{span: 18, offset: 3}" :md="{span: 14, offset: 5}" :lg="{span: 12, offset: 6}">
                 <div class="container">
                     <el-tabs v-model="activeName">
-                        <el-tab-pane label="全部" name="first">
-                            <div class="videos-container">
+                        <el-tab-pane label="全部" name="all">
+                            <!-- <div class="videos-container">
                                 <div class="video">
                                     <div class="video-plc">
                                         <img class="video-img" src="https://img3.doubanio.com/view/photo/l/public/p712241453.webp">
@@ -13,7 +13,7 @@
                                     <div class="video-info">
                                         <p class="video-title">疯狂的石头</p>
                                         <p class="video-director">宁浩</p>
-                                        <p class="video-actor"> 郭涛 / 刘桦 / 连晋 / 黄渤 /徐峥</p>
+                                        <p class="video-actor"> 郭涛 / 刘桦 / 连晋 / 黄渤 / 徐峥</p>
                                         <el-rate v-model="value5" allow-half disabled text-color="#ff9900" score-template="{value}">
                                         </el-rate>
                                         <span class="video-douban">豆瓣 9.0 分</span>
@@ -25,13 +25,33 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </el-tab-pane>
-                        <el-tab-pane label="大陆" name="second">配置管理</el-tab-pane>
-                        <el-tab-pane label="港台" name="third">角色管理</el-tab-pane>
-                        <el-tab-pane label="海外" name="fourth">定时任务补偿</el-tab-pane>
+                        <el-tab-pane label="大陆" name="dl"></el-tab-pane>
+                        <el-tab-pane label="港台" name="gt"></el-tab-pane>
+                        <el-tab-pane label="海外" name="hw"></el-tab-pane>
                     </el-tabs>
-
+                    <div class="videos-container">
+                        <div class="video" v-for="video in videoList" :key="video.id" v-if="(video.videoclass == activeName) || (activeName == 'all')">
+                            <div class="video-plc">
+                                <img class="video-img" :src="video.plcurl">
+                            </div>
+                            <div class="video-info">
+                                <p class="video-title">{{video.title}}</p>
+                                <p class="video-director">{{video.director}}</p>
+                                <p class="video-actor">{{video.actor}}</p>
+                                <el-rate v-model="video.dbrate" allow-half disabled text-color="#ff9900" score-template="{value}">
+                                </el-rate>
+                                <span class="video-douban">豆瓣 {{video.dbrate * 2}} 分</span>
+                                <router-link :to="video.playurl">
+                                    <el-button class="play-btn" type="primary" plain>在线观看</el-button>
+                                </router-link>
+                                <a :href="video.downurl">
+                                    <el-button class="video-down-btn" type="primary" plain>种子下载</el-button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </el-col>
@@ -40,6 +60,7 @@
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         name: 'videoPage',
         components: {
@@ -47,9 +68,24 @@
         },
         data() {
             return {
-                value5: 4.8,
-                activeName: 'first'
+                videoList: [],
+                activeName: 'all'
             }
+        },
+        methods: {
+            getVideoInfo() {
+                axios.get('/api/video.json')
+                    .then(this.getVideoInfoSucc)
+            },
+            getVideoInfoSucc(res) {
+                if (res.status == 200) {
+                    this.videoList = res.data
+                    console.log(this.videoList);
+                }
+            }
+        },
+        mounted() {
+            this.getVideoInfo()
         }
     }
 </script>

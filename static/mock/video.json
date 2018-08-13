@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "videoclass": "dl",
+        "plcurl": "static/video/fkdst/1.jpg",
+        "title": "疯狂的石头",
+        "director": "宁浩",
+        "actor": "郭涛 / 刘桦 / 连晋 / 黄渤 / 徐峥",
+        "dbrate": 4.2,
+        "dburl": "https://movie.douban.com/subject/1862151/",
+        "playurl": "/video/01",
+        "downurl": "#"
+    },
+    {
+        "id": 2,
+        "videoclass": "gt",
+        "plcurl": "static/video/wjd1/1.jpg",
+        "title": "無間道 (2002)",
+        "director": "刘伟强 / 麦兆辉",
+        "actor": "刘德华 / 梁朝伟 / 黄秋生 / 曾志伟 / 郑秀文",
+        "dbrate": 4.6,
+        "dburl": "https://movie.douban.com/subject/1307914/",
+        "playurl": "/video/02",
+        "downurl": "#"
+    },
+    {
+        "id": 3,
+        "videoclass": "gt",
+        "plcurl": "static/video/wjd2/1.jpg",
+        "title": "無間道II (2003)",
+        "director": "刘伟强 / 麦兆辉",
+        "actor": "陈冠希 / 余文乐 / 曾志伟 / 黄秋生 / 吴镇宇",
+        "dbrate": 4.2,
+        "dburl": "https://movie.douban.com/subject/1307106/",
+        "playurl": "/video/03",
+        "downurl": "#"
+    }
+]

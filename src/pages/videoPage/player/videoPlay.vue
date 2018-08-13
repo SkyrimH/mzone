@@ -40,7 +40,7 @@
                     sources: [{
                         type: "video/mp4",
                         // mp4
-                        src: "static/video/01/01.mp4",
+                        src: "static/video/fkdst/01.mp4",
                         // webm
                         // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
                     }],
