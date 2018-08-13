@@ -1,9 +1,9 @@
 <template>
     <div>
         <h1>
-            Wellcome!
+            WELLCOME
         </h1>
-        <img class="home-logo" src="static/logogray.png">
+        <img class="home-logo" src="static/logoblack.png">
     </div>
 </template>
 
@@ -18,9 +18,10 @@
 
 <style scoped>
 h1 {
-    margin-top: 60px;
+    margin-top: 80px;
     margin-bottom: -60px;
-    color: #545c64
+    color: #303133;
+    font-family: "bankgothic md bt";
 }
     .home-logo {
         text-align: center;

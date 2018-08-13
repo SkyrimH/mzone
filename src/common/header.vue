@@ -9,7 +9,7 @@
           class="el-menu-header"
           mode="horizontal"
           @select="handleSelect"
-          background-color="#545c64"
+          background-color="#303133"
           text-color="#fff"
           active-text-color="#ffd04b"
           router>
@@ -52,7 +52,7 @@
     text-align: center
   }
   .el-header {
-    background-color: #545c64;
+    background-color: #303133;
   }
   .header-left {
     float: left;
