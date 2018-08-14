@@ -1,6 +1,6 @@
 <template>
     <div>
-        gamePage
+        <h1>还没做好。。。</h1>        
     </div>
 </template>
 
@@ -14,6 +14,10 @@
     }
 </script>
 
-<style>
-
+<style scoped>
+h1 {
+    margin-top: 80px;
+    margin-bottom: -60px;
+    color: #303133
+}
 </style>

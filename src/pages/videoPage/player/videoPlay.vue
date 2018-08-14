@@ -51,8 +51,11 @@
         },
         mounted() {
             this.getVideoInfo()
-            // console.log('this is current player instance object', this.player)
             setTimeout(() => {
+                this.player.muted(false)
+            }, 500)
+            // console.log('this is current player instance object', this.player)
+            // setTimeout(() => {
                 // console.log('dynamic change options', this.player)
 
                 // change src
@@ -69,8 +72,8 @@
                 //   type: "video/mp4",
                 //   src: 'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm',
                 // }]
-                this.player.muted(false)
-            }, 5000)
+            //     this.player.muted(false)
+            // }, 5000)
         },
         computed: {
             player() {
