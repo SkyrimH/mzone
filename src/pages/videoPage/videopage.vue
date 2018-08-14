@@ -24,9 +24,6 @@
                                 <router-link :to="'/video/' + video.id">
                                     <el-button class="play-btn" type="primary" plain>在线观看</el-button>
                                 </router-link>
-                                <a :href="video.downurl">
-                                    <el-button class="video-down-btn" type="primary" plain>种子下载</el-button>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +55,6 @@
             getVideoInfoSucc(res) {
                 if (res.status == 200) {
                     this.videoList = res.data
-                    console.log(this.videoList);
                 }
             }
         },
