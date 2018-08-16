@@ -2,7 +2,7 @@
   <div>
     <el-container>
       <el-header style="text-align: left; font-size: 18px">
-                  <img class="logo" src="static/logo.png">
+        <img class="logo" src="static/logo.png">
         <div class="header-left">
           <el-menu
           :default-active="activeIndex"
@@ -57,6 +57,10 @@
   .header-left {
     float: left;
     padding-left: 140px
+  }
+  .el-menu-header {
+    overflow: hidden;
+    height: 60px;
   }
 
 </style>

@@ -32,9 +32,10 @@
         data() {
             return {
                 videoInfo: Object,
+                playerWidth: '',
                 // videojs options
                 playerOptions: {
-                    height: '540',
+                    height: '',
                     autoplay: false,
                     muted: true,
                     language: 'en',
@@ -44,36 +45,17 @@
                         // mp4
                         src: '',
                         // webm
-                        // src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
                     }],
                 }
             }
         },
         mounted() {
             this.getVideoInfo()
+            this.setPlayerHeight()
+
             setTimeout(() => {
                 this.player.muted(false)
             }, 500)
-            // console.log('this is current player instance object', this.player)
-            // setTimeout(() => {
-                // console.log('dynamic change options', this.player)
-
-                // change src
-                // this.playerOptions.sources[0].src = 'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm';
-
-                // change item
-                // this.$set(this.playerOptions.sources, 0, {
-                //   type: "video/mp4",
-                //   src: 'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm',
-                // })
-
-                // change array
-                // this.playerOptions.sources = [{
-                //   type: "video/mp4",
-                //   src: 'https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm',
-                // }]
-            //     this.player.muted(false)
-            // }, 5000)
         },
         computed: {
             player() {
@@ -81,19 +63,26 @@
             }
         },
         methods: {
-            getVideoInfo () {
-                axios.get('/api/video.json',{
+            // 设置播放器高度
+            setPlayerHeight() {
+                this.playerWidth = this.$refs.videoPlayer.$el.clientWidth
+                if (this.playerWidth < 856) {
+                    this.playerOptions.height = this.playerWidth * 9 / 16
+                }
+            },
+            getVideoInfo() {
+                axios.get('/api/video.json', {
                     params: {
                         id: this.$route.params.id
                     }
                 }).then(this.getVideoInfoSucc)
             },
-            getVideoInfoSucc (res) {
-                let index = this.$route.params.id - 1                
+            getVideoInfoSucc(res) {
+                let index = this.$route.params.id - 1
                 if (res.status == 200) {
                     this.videoInfo = res.data[index]
-                    this.playerOptions.sources[0].src = this.videoInfo.playurl                     
-                }                
+                    this.playerOptions.sources[0].src = this.videoInfo.playurl
+                }
             },
             // listen event
             onPlayerPlay(player) {
@@ -143,6 +132,6 @@
 <style scroped>
     .play-back-btn {
         width: 300px;
-        margin-top: 30px
+        margin-top: 30px!important;
     }
 </style>

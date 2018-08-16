@@ -20,13 +20,12 @@
                                 <p class="video-actor">{{video.actor}}</p>
                                 <el-rate v-model="video.dbrate" allow-half disabled text-color="#ff9900" score-template="{value}">
                                 </el-rate>
-                                <span class="video-douban">豆瓣 {{video.dbrate * 2}} 分</span>
+                                <a :href="video.dburl" target="_blank">
+                                    <span class="video-douban">豆瓣 {{video.dbrate * 2}} 分</span>
+                                </a>
                                 <router-link :to="'/video/' + video.id">
                                     <el-button class="play-btn" type="primary" plain>在线观看</el-button>
                                 </router-link>
-                                <a :href="video.downurl">
-                                    <el-button class="video-down-btn" type="primary" plain>种子下载</el-button>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +57,6 @@
             getVideoInfoSucc(res) {
                 if (res.status == 200) {
                     this.videoList = res.data
-                    console.log(this.videoList);
                 }
             }
         },
