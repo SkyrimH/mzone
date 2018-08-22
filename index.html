@@ -3,12 +3,22 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0">
     <title>Skyrimer</title>
     <link href="https://cdn.jsdelivr.net/npm/video.js@6.6.2/dist/video-js.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/vue-video-player@5.0.0/src/custom-theme.css" rel="stylesheet">
     <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon" />
     <style>
+        @media screen and (min-width: 574px) {
+            html, body {
+                font-size: 20px;
+            }
+        }
+        @media screen and (max-width: 574px) {
+            html, body {
+                font-size: 15px;
+            }
+        }
         body {
             margin: 0
         }

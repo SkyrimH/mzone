@@ -79,23 +79,23 @@
         position: relative;
         overflow: hidden;
         display: flex;
-        margin: 10px 0;
-        border-radius: 10px;
-        padding: 20px;
-        height: 200px;
+        margin: 0.5rem 0;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        height: 10rem;
         background: rgb(236, 236, 236)
     }
 
     .video-plc {
         width: 30%;
         text-align: right;
-        padding-right: 20px
+        padding-right: 1.6rem
     }
 
     .video-img {
-        width: 140px;
-        height: 180px;
-        padding: 10px
+        width: 7rem;
+        height: 9rem;
+        padding: 0.5rem
     }
 
     .video-info {
@@ -105,37 +105,54 @@
     }
 
     .video-title {
-        font-size: 20px;
-        margin: 10px 0
+        line-height: 1.4rem;
+        font-size: 1rem;
+        margin: 0.5rem 0
     }
 
     .video-director,
     .video-actor {
-        margin: 12px 0;
+        margin: 0.6rem 0;
+        font-size: 0.8rem;
+        line-height: 1rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 
     .el-rate {
+        height: 0.8rem;
         position: absolute;
         display: inline-block;
-        line-height: 1;
+        line-height: 0.8rem;
     }
-
+    .el-rate__item {
+        font-size: 0.8rem
+    }
+    .el-rate__icon {
+        font-size: 1rem;
+        margin-right: 0.15rem
+    }
     .video-douban {
         position: absolute;
-        font-size: 14px;
-        margin-left: 130px;
+        font-size: 0.7rem;
+        margin-left: 6rem;
     }
 
     .play-btn {
         display: inline-block;
         position: absolute;
-        bottom: 10px;
+        bottom: 0.5rem;
     }
-
+    .el-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.7rem;
+        border-radius: 0.2rem
+    }
     .video-down-btn {
         display: inline-block;
         position: absolute;
-        left: 120px;
-        bottom: 10px;
+        left: 6rem;
+        bottom: 0.5rem;
     }
 </style>
