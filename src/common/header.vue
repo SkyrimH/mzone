@@ -1,7 +1,7 @@
 <template>
   <div>
     <el-container>
-      <el-header style="text-align: left; font-size: 18px">
+      <el-header style="">
         <img class="logo" src="static/logo.png">
         <div class="header-left">
           <el-menu
@@ -43,24 +43,32 @@
   .logo {
     position: absolute;
     z-index: 99;
-    width: 60px;
-    height: 60px;
-    padding-left: 60px
+    width: 3rem;
+    height: 3rem;
+    padding-left: 1rem
   }
   .el-menu-item {
-    width: 90px;
+    width: 4.5rem;
+    height: 3rem!important;
+    line-height: 3rem!important;
     text-align: center
   }
   .el-header {
+    height: auto!important;
     background-color: #303133;
+    text-align: left; 
+    font-size: 18px
+  }
+  .el-menu--horizontal {
+    border-bottom: none;
   }
   .header-left {
     float: left;
-    padding-left: 140px
+    padding-left: 5rem
   }
   .el-menu-header {
     overflow: hidden;
-    height: 60px;
+    height: 3rem;
   }
 
 </style>

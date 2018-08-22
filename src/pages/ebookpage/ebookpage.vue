@@ -77,23 +77,23 @@
         position: relative;
         overflow: hidden;
         display: flex;
-        margin: 10px 0;
-        border-radius: 10px;
-        padding: 20px;
-        height: 200px;
+        margin: 0.5rem 0;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        height: 10rem;
         background: rgb(236, 236, 236)
     }
 
     .book-plc {
         width: 30%;
         text-align: right;
-        padding-right: 20px
+        padding-right: 1.8rem
     }
 
     .book-img {
-        width: 140px;
-        height: 180px;
-        padding: 10px
+        width: 7rem;
+        height: 9rem;
+        padding: 0.5rem
     }
 
     .book-info {
@@ -103,23 +103,39 @@
     }
 
     .book-title {
-        font-size: 20px
+        line-height: 1.4rem;
+        font-size: 1rem;
+        margin: 0.5rem 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
-
+    .book-author {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
     .el-rate {
+        height: 0.8rem;
         position: absolute;
         display: inline-block;
-        line-height: 1;
+        line-height: 0.8rem;
     }
-
+    .el-rate__item {
+        font-size: 0.8rem
+    }
+    .el-rate__icon {
+        font-size: 1rem;
+        margin-right: 0.15rem
+    }
     .ebook-douban {
         position: absolute;
-        font-size: 14px;
-        margin-left: 130px;
+        font-size: 0.7rem;
+        margin-left: 6rem;
     }
 
     .ebook-down-btn {
         position: absolute;
-        bottom: 10px;
+        bottom: 0.5rem;
     }
 </style>
