@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <main-header></main-header>
+    <!-- <main-header></main-header> -->
     <router-view/>
     <!-- <div>
       <el-button @click="startHacking">Start</el-button>
@@ -29,11 +29,12 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    @import "../static/css/main.css";
+    #app {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+    }
 </style>
