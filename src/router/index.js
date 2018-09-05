@@ -6,7 +6,6 @@ import videoPlay from '@/pages/videoPage/player/videoPlay'
 import ebookPage from '@/pages/ebookPage/ebookPage'
 import gamePage from '@/pages/gamePage/gamePage'
 import adminPage from '@/pages/adminPage/adminPage'
-import adminLogin from '@/pages/adminPage/pages/adminLogin'
 
 Vue.use(Router)
 
@@ -43,15 +42,17 @@ export default new Router({
       redirect: '/admin/home'
     },
     {
+      path: '/admin/login',
+      component: resolve => require(
+        ['../pages/adminpage/adminlogin'], resolve
+      ),
+      meta: { title: '管理员登录' }
+    },
+    {
       path: '/admin',
       name: 'adminPage',
       component: adminPage,
       children:[
-        {
-          path: '/admin/login',
-          name: 'adminLogin',
-          component: adminLogin
-        },
         {
             path: '/admin/home',
             component: resolve => require(['../pages/adminPage/pages/adminhome'], resolve),

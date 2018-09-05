@@ -51,7 +51,7 @@
         },
         methods: {
             getVideoInfo() {
-                axios.get('/api/video.json')
+                axios.get('/static/mock/video.json')
                     .then(this.getVideoInfoSucc)
             },
             getVideoInfoSucc(res) {
