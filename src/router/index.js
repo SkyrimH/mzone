@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import homePage from '@/pages/homepage/Homepage'
+import indexPage from '@/pages/indexpage'
 import videoPage from '@/pages/videoPage/videoPage'
 import videoPlay from '@/pages/videoPage/player/videoPlay'
 import ebookPage from '@/pages/ebookPage/ebookPage'
@@ -14,29 +15,41 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/index'
+    },
+    {
+      path: '/',
       name: 'homePage',
-      component: homePage
+      component: homePage,
+      children: [
+        {
+          path: '/index',
+          name: 'indexPage',
+          component: indexPage
+        },
+        {
+          path: '/video',
+          name: 'videoPage',
+          component: videoPage
+        },
+        {
+          path: '/video/:id',
+          name: 'videoPlay',
+          component: videoPlay
+        },
+        {
+          path: '/ebook',
+          name: 'ebookPage',
+          component: ebookPage
+        },
+        {
+          path: '/game',
+          name: 'gamePage',
+          component: gamePage
+        },
+      ]
     },
-    {
-      path: '/video',
-      name: 'videoPage',
-      component: videoPage
-    },
-    {
-      path: '/video/:id',
-      name: 'videoPlay',
-      component: videoPlay
-    },
-    {
-      path: '/ebook',
-      name: 'ebookPage',
-      component: ebookPage
-    },
-    {
-      path: '/game',
-      name: 'gamePage',
-      component: gamePage
-    },
+
     {
       path: '/admin',
       redirect: '/admin/home'

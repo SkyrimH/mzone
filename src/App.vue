@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import mainHeader from '@/common/header'
+// import mainHeader from '@/common/header'
 export default {
   name: 'App',
-  components: {
-            mainHeader
-        },
+  // components: {
+  //           mainHeader
+  //       },
   methods: {
     startHacking () {
       this.$notify({
