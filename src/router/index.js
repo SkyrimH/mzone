@@ -12,6 +12,7 @@ Vue.use(Router)
 
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -98,6 +99,11 @@ export default new Router({
         //     component: resolve => require(['../components/page/Markdown.vue'], resolve),
         //     meta: { title: 'markdown编辑器' }    
         // },
+        {
+          path: '/admin/ebookmanage',
+          component: resolve => require(['../pages/adminPage/pages/ebookmanage.vue'], resolve),
+          meta: { title: '电子书管理' }   
+        },
         {
             // 图片上传组件
             path: '/admin/ebookupload',

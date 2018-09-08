@@ -8,25 +8,25 @@
                         <el-tab-pane label="计算机类" name="cs"></el-tab-pane>
                         <el-tab-pane label="社科类" name="ss"></el-tab-pane>
                     </el-tabs>
-                     <div class="books-container">
-                                <div class="book" v-for="book in bookList" :key="book.id" v-if="(book.bookclass == activeName) || (activeName == 'all')">
-                                    <div class="book-plc">
-                                        <img class="book-img" :src="book.plcurl">
-                                    </div>
-                                    <div class="book-info">
-                                        <p class="book-title">{{book.title}}</p>
-                                        <p class="book-author">{{book.author}}</p>
-                                        <el-rate v-model="book.rate" allow-half disabled text-color="#ff9900" score-template="{value}">
-                                        </el-rate>
-                                        <a :href="book.dburl" target="_blank">
-                                            <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
-                                        </a>
-                                        <a :href="book.downurl" target="_blank">
-                                            <el-button class="ebook-down-btn" type="primary" plain>本地下载</el-button>
-                                        </a>
-                                    </div>
-                                </div>
+                    <div class="books-container">
+                        <div class="book" v-for="book in bookList" :key="book.id" v-if="(book.bookclass == activeName) || (activeName == 'all')">
+                            <div class="book-plc">
+                                <img class="book-img" :src="book.plcurl">
                             </div>
+                            <div class="book-info">
+                                <p class="book-title">{{book.title}}</p>
+                                <p class="book-author">{{book.author}}</p>
+                                <el-rate v-model="book.rate" allow-half disabled text-color="#ff9900" score-template="{value}">
+                                </el-rate>
+                                <a :href="book.dburl" target="_blank">
+                                    <span class="ebook-douban">豆瓣 {{book.rate * 2}} 分</span>
+                                </a>
+                                <a :href="book.downurl" target="_blank">
+                                    <el-button class="ebook-down-btn" type="primary" plain>本地下载</el-button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </el-col>
@@ -110,24 +110,32 @@
         white-space: nowrap;
         text-overflow: ellipsis;
     }
+
     .book-author {
+        margin: 0.6rem 0;
+        font-size: 0.8rem;
+        line-height: 1rem;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
     }
+
     .el-rate {
         height: 0.8rem;
         position: absolute;
         display: inline-block;
         line-height: 0.8rem;
     }
+
     .el-rate__item {
         font-size: 0.8rem
     }
+
     .el-rate__icon {
         font-size: 1rem;
         margin-right: 0.15rem
     }
+
     .ebook-douban {
         position: absolute;
         font-size: 0.7rem;

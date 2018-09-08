@@ -7,7 +7,7 @@
                 <el-breadcrumb-item>电子书上传</el-breadcrumb-item>
             </el-breadcrumb>
         </div>
-        <div class="container">
+        <div class="container ebookupload">
             <el-form class="formContainer" action="/admin/ebookupload/" ref="form" :model="form" label-width="80px" method="POST" enctype="multipart/form-data">
                 <el-form-item label="书名">
                     <el-input v-model="form.title" name="title"></el-input>

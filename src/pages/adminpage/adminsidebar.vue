@@ -48,15 +48,15 @@
                     {
                         icon: 'el-icon-date',
                         index: '3',
-                        title: '文件上传',
+                        title: '文件管理',
                         subs: [
                             {
                                 index: 'videoupload',
                                 title: '影视上传'
                             },
                             {
-                                index: 'ebookupload',
-                                title: '电子书上传'
+                                index: 'ebookmanage',
+                                title: '电子书管理'
                             },
                             {
                                 index: 'gameupload',
