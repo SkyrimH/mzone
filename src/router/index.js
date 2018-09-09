@@ -104,12 +104,12 @@ export default new Router({
           component: resolve => require(['../pages/adminPage/pages/ebookmanage.vue'], resolve),
           meta: { title: '电子书管理' }   
         },
-        {
-            // 图片上传组件
-            path: '/admin/ebookupload',
-            component: resolve => require(['../pages/adminPage/pages/ebookupload.vue'], resolve),
-            meta: { title: '电子书上传' }   
-        },
+        // {
+        //     // 图片上传组件
+        //     path: '/admin/ebookupload',
+        //     component: resolve => require(['../pages/adminPage/pages/ebookupload.vue'], resolve),
+        //     meta: { title: '电子书上传' }   
+        // },
         // {
         //     // vue-schart组件
         //     path: '/charts',

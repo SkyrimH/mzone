@@ -61,7 +61,6 @@
 </template>
 
 <script>
-    import VueCropper from 'vue-cropperjs';
     export default {
         name: 'ebookUpload',
         data() {
@@ -79,11 +78,6 @@
             }
         },
         methods: {
-            onSubmit() {
-                this.$refs.form.submit();
-            },
-            resetForm() {                
-            }
         }
     }
 </script>
