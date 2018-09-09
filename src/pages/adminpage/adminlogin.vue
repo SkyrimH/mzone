@@ -2,7 +2,7 @@
     <div class="login-wrap">
         <div class="ms-title">后台管理系统</div>
         <div class="ms-login">
-            <el-form :model="ruleForm" :rules="rules" action="/admin" label-width="0px" class="demo-ruleForm">
+            <el-form :model="ruleForm" :rules="rules" action="/admin/login" label-width="0px" class="demo-ruleForm"  method="POST">
                 <el-form-item prop="username">
                     <el-input v-model="ruleForm.username" 
                     name="username" placeholder="username"></el-input>

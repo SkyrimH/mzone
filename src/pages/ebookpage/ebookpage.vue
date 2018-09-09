@@ -48,7 +48,7 @@
         },
         methods: {
             getEbookInfo() {
-                axios.get('/static/mock/ebook.json')
+                axios.get('/api/ebook')
                     .then(this.getEbookInfoSucc)
             },
             getEbookInfoSucc(res) {

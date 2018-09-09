@@ -7,12 +7,14 @@ import videoPlay from '@/pages/videoPage/player/videoPlay'
 import ebookPage from '@/pages/ebookPage/ebookPage'
 import gamePage from '@/pages/gamePage/gamePage'
 import adminPage from '@/pages/adminPage/adminPage'
+import adminLogin from '@/pages/adminPage/adminlogin'
+import adminHome from '@/pages/adminPage/pages/adminhome'
+import ebookManage from '@/pages/adminPage/pages/ebookmanage'
 
 Vue.use(Router)
 
 
 export default new Router({
-  mode: 'history',
   routes: [
     {
       path: '/',
@@ -57,10 +59,12 @@ export default new Router({
     },
     {
       path: '/admin/login',
-      component: resolve => require(
-        ['../pages/adminpage/adminlogin'], resolve
-      ),
-      meta: { title: '管理员登录' }
+      name: 'adminLogin',
+      component: adminLogin
+      // component: resolve => require(
+      //   ['../pages/adminpage/adminlogin'], resolve
+      // ),
+      // meta: { title: '管理员登录' }
     },
     {
       path: '/admin',
@@ -69,8 +73,17 @@ export default new Router({
       children:[
         {
             path: '/admin/home',
-            component: resolve => require(['../pages/adminPage/pages/adminhome'], resolve),
-            meta: { title: '系统首页' }
+            name: 'adminHome',
+            component: adminHome
+            // component: resolve => require(['../pages/adminPage/pages/adminhome'], resolve),
+            // meta: { title: '系统首页' }
+        },
+        {
+          path: '/admin/ebookmanage',
+          name: 'ebookManage',
+          component: ebookManage
+          // component: resolve => require(['../pages/adminPage/pages/ebookmanage.vue'], resolve),
+          // meta: { title: '电子书管理' }   
         },
         // {
         //     path: '/table',
@@ -99,11 +112,7 @@ export default new Router({
         //     component: resolve => require(['../components/page/Markdown.vue'], resolve),
         //     meta: { title: 'markdown编辑器' }    
         // },
-        {
-          path: '/admin/ebookmanage',
-          component: resolve => require(['../pages/adminPage/pages/ebookmanage.vue'], resolve),
-          meta: { title: '电子书管理' }   
-        },
+
         // {
         //     // 图片上传组件
         //     path: '/admin/ebookupload',
