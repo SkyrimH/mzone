@@ -178,8 +178,6 @@
                 return row.tag === value;
             },
             handleEdit(index, row) {
-                console.log(index, row);
-
                 this.idx = index;
                 this.editForm = {
                     id: row.id,

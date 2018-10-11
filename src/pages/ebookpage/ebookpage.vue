@@ -7,6 +7,7 @@
                         <el-tab-pane label="全部" name="all"></el-tab-pane>
                         <el-tab-pane label="计算机类" name="cs"></el-tab-pane>
                         <el-tab-pane label="社科类" name="ss"></el-tab-pane>
+                        <el-tab-pane label="文学类" name="nv"></el-tab-pane>
                     </el-tabs>
                     <div class="books-container">
                         <div class="book" v-for="book in bookList" :key="book.id" v-if="(book.bookclass == activeName) || (activeName == 'all')">

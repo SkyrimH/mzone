@@ -54,11 +54,11 @@ export default new Router({
     },
 
     {
-      path: '/admin',
-      redirect: '/admin/home'
+      path: '/admins',
+      redirect: '/admins/home'
     },
     {
-      path: '/admin/login',
+      path: '/admins/login',
       name: 'adminLogin',
       component: adminLogin
       // component: resolve => require(
@@ -67,19 +67,19 @@ export default new Router({
       // meta: { title: '管理员登录' }
     },
     {
-      path: '/admin',
+      path: '/admins',
       name: 'adminPage',
       component: adminPage,
       children:[
         {
-            path: '/admin/home',
+            path: '/admins/home',
             name: 'adminHome',
             component: adminHome
             // component: resolve => require(['../pages/adminPage/pages/adminhome'], resolve),
             // meta: { title: '系统首页' }
         },
         {
-          path: '/admin/ebookmanage',
+          path: '/admins/ebookmanage',
           name: 'ebookManage',
           component: ebookManage
           // component: resolve => require(['../pages/adminPage/pages/ebookmanage.vue'], resolve),
